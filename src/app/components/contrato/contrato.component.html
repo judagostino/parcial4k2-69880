@@ -1,0 +1,90 @@
+<div class = "container">
+  <div *ngIf= "EstadoForm == 'L'">
+  <h1>{{Titulo}}</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col"> Contrato Descripcion</th>
+      <th scope="col">Contrato Importe</th>
+      <th scope="col">IdContrato</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor = "let item of Items">
+      
+      <td>{{item.ContratoDescripcion}}</td>
+      <td>{{item.ContratoImporte}}</td>
+      <td>{{item.IdContrato}}</td>
+    </tr>
+  </tbody>
+</table>
+    <input name="" id=""  class="btn btn-success" type = "button"  value= "Agregar"(click) = 'Agregar()'>
+  </div>
+  <div *ngIf= "EstadoForm == 'A'">
+    	<form name="FormReg" [formGroup]='FormReg'>
+				<!--campo ContratoDescripcion-->
+				<div class="form-group">
+					<label class="col-form-label col-sm-2 col-sm-offset-2" for="Descripcion">ContratoDescripcion <span
+                    class="text-danger">*</span></label>
+					<div class="col-sm-6">
+						<input type="text" class="form-control" formControlName="ContratoDescripcion"
+         [ngClass]="{'is-invalid': (FormReg.controls.ContratoDescripcion.touched || submitted)  
+            && FormReg.controls.ContratoDescripcion.errors}" />
+
+						<span class="text-danger" *ngIf="(FormReg.controls.ContratoDescripcion.touched || submitted) 
+                        && FormReg.controls.ContratoDescripcion.errors?.required">
+                    Dato requerido.
+                </span>
+						<span class="text-danger" *ngIf="(FormReg.controls.ContratoDescripcion.touched || submitted) 
+                       && (FormReg.controls.ContratoDescripcion.errors?.minlength || FormReg.controls.ContratoDescripcion.errors?.maxlength) ">
+                    Dato texto, 4 a 50 caracteres.
+                </span>
+
+					</div>
+
+					<!--campo ContratoId-->
+					<div class="form-group">
+						<label class="col-form-label col-sm-2 col-sm-offset-2" for="ContratoId">Contrato Id <span
+                    class="text-danger">*</span></label>
+						<div class="col-sm-6">
+							<input type="text" name="ContratoId" class="form-control" formControlName="ContratoId"
+            [ngClass]="{'is-invalid': (FormReg.controls.ContratoId.touched || submitted)  
+            && FormReg.controls.ContratoId.errors}" />
+							<span class="text-danger" *ngIf="(FormReg.controls.ContratoId.touched || submitted) 
+                       && FormReg.controls.ContratoId.errors?.required">
+                    Dato requerido.
+                </span>
+								<span class="text-danger" *ngIf="(FormReg.controls.ContratoId.touched || submitted) 
+                       && (FormReg.controls.ContratoId.errors?.minlength || FormReg.controls.ContratoId.errors?.maxlength) ">
+                    Dato texto, 4 a 50 caracteres.
+                </span>
+						</div>
+					</div>
+          	<!--campo ContratoImporte-->
+					<div class="form-group">
+						<label class="col-form-label col-sm-2 col-sm-offset-2" for="ContratoImporte">ContratoImporte <span
+                    class="text-danger">*</span></label>
+						<div class="col-sm-6">
+							<input type="text" name="ContratoImporte" class="form-control" formControlName="ContratoImporte"
+            [ngClass]="{'is-invalid': (FormReg.controls.ContratoImporte.touched || submitted)  
+            && FormReg.controls.ContratoImporte.errors}" />
+							<span class="text-danger" *ngIf="(FormReg.controls.ContratoImporte.touched || submitted) 
+                       && FormReg.controls.ContratoImporte.errors?.required">
+                    Dato requerido.
+                </span>
+							<span class="text-danger" *ngIf="(FormReg.controls.ContratoImporte.touched || submitted) 
+               && FormReg.controls.Precio.errors?.pattern">
+                    Dato numérico, 1 a 7 dígitos.
+                </span>
+						</div>
+					</div>
+					<div class="row justify-content-center">
+						<button type="button" class="btn btn-primary" (click)="Grabar()">
+            <span class="fas fa-check"></span> Grabar
+        </button>
+						&nbsp;
+						<button type="button" class="btn btn-warning" (click)="Volver()">Volver
+              <span class="fas fa-undo"></span> 
+        </button>
+
+</div>
