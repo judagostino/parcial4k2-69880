@@ -30,7 +30,7 @@ export class ContratoComponent implements OnInit {
     });
   }
 
-  getContrato(){
+  getContrato(){ 
     this.contratosService.get()
     .subscribe((res:Contrato[])=>{
       this.Items = res;

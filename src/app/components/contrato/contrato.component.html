@@ -1,6 +1,12 @@
 <div class = "container">
-  <div *ngIf= "EstadoForm == 'L'">
-  <h1>{{Titulo}}</h1>
+<h1>{{Titulo}}</h1>
+  	<div class="row justify-content-center">
+						<button type="button" class="btn btn-success" (click)="Agregar()">
+            <span class="fas fa-check"></span> Agregar Contrato
+        </button>
+      </div>
+      <div *ngIf= "EstadoForm == 'L'">
+  
 <table class="table table-striped">
   <thead>
     <tr>
@@ -18,7 +24,7 @@
     </tr>
   </tbody>
 </table>
-    <input name="" id=""  class="btn btn-success" type = "button"  value= "Agregar"(click) = 'Agregar()'>
+   
   </div>
   <div *ngIf= "EstadoForm == 'A'">
     	<form name="FormReg" [formGroup]='FormReg'>
@@ -80,11 +86,11 @@
 					</div>
 					<div class="row justify-content-center">
 						<button type="button" class="btn btn-primary" (click)="Grabar()">
-            <span class="fas fa-check"></span> Grabar
+            <span class="fas fa-check"></span> Aceptar
         </button>
 						&nbsp;
-						<button type="button" class="btn btn-warning" (click)="Volver()">Volver
-              <span class="fas fa-undo"></span> 
+						<button type="button" class="btn btn-warning" (click)="Volver()">Cancelar
+              
         </button>
 
 </div>
