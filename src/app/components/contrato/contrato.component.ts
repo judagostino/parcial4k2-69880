@@ -46,7 +46,7 @@ export class ContratoComponent implements OnInit {
 Grabar(){
   this.submitted = true;
   if(this.FormReg.invalid){
-   
+      window.alert("Verifique los datos ingresados")
     return;
   }
   const itemCopy = { ...this.FormReg.value };
